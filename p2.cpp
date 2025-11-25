@@ -63,6 +63,9 @@ void kasus2P2(){
             cout << "\n------------" << endl;
             cout << "Soal Nomor 2" << endl;
             cout << "------------" << endl;
+            for(int i=1; i<=3; i++){
+                cout << "Masukkan nilai x : "; cin >> x;
+            }
             cout << "y = ax^2 + bx + c\n" << endl;
             cout << "Masukkan nilai x : "; cin >> x;
             cout << "Masukkan nilai a : "; cin >> a;
@@ -98,7 +101,48 @@ void kasus2P2(){
 
 }
 
+struct SuhuTemps {
+    double c, r, k, f;
+};
+
+SuhuTemps KonversiFarenheit(double fahrenheit){
+    SuhuTemps result;
+    result.c = 5.0/9.0 * (fahrenheit - 32);
+    result.r = 4.0/9.0 * (fahrenheit - 32);
+    result.k = result.c + 273;
+
+    return result;
+}
+
+SuhuTemps KonversiCelcius(double celcius){
+    SuhuTemps result;
+    result.f = (9.0/5.0) * celcius + 32; 
+    result.k = celcius + 273.15; 
+    result.r = (4.0/5.0) * celcius;
+    
+    return result;
+} 
+
+SuhuTemps KonversiReamur(double reamur){
+    SuhuTemps result;
+    result.c = (5.0/4.0) * reamur; 
+    result.f = (9.0/4.0)* reamur + 32; 
+    result.k = result.c + 273.15; 
+
+    return result;
+}
+
+SuhuTemps KonversiKelvin(double kelvin){
+    SuhuTemps result;
+    result.c = kelvin - 273.15; 
+    result.f = 5.0/9.0 * (result.c) + 32; 
+    result.r = 4.0/9.0 * (result.c); 
+
+    return result;
+}
+
 void kasus3P2(){
+
     double c,f,k,r;
     int pilihan;
     char coba;
@@ -118,40 +162,40 @@ void kasus3P2(){
         if(pilihan == 1){
             cout << "Masukkan nilai Celcius : "; cin >> c;
             cout << "-------------------------" << endl;
-            f = (9.0/5.0)*c + 32;
-            k = c + 273.15;
-            r = (4.0/5.0)*c;
-
+            SuhuTemps result = KonversiCelcius(c);
+            f = result.f;
+            k = result.k;
+            r = result.r;
             cout << "Konversi suhu ke Fahrenheit adalah\t: " << f << endl;
             cout << "Konversi suhu ke Kelvin adalah\t\t: " << k << endl;
             cout << "Konversi suhu ke Reamur adalah\t\t: " << r << endl << '\n';
         } else if(pilihan == 2){
             cout << "Masukkan nilai Fahrenheit : "; cin >> f;
             cout << "-------------------------" << endl;
-            c = 5.0/9.0*(f-32);
-            k = 5.0/9.0*(f-32)+273.15;
-            r = 4.0/9.0*(f-32);
-
+            SuhuTemps result = KonversiFarenheit(f);
+            c = result.c;
+            k = result.k;
+            r = result.r;
             cout << "Konversi suhu ke Celcius adalah\t: " << c << endl;
             cout << "Konversi suhu ke Kelvin adalah\t: " << k << endl;
             cout << "Konversi suhu ke Reamur adalah\t: " << r << endl << '\n';
         } else if(pilihan == 3){
             cout << "Masukkan nilai Kelvin : "; cin >> k;
             cout << "-------------------------" << endl;
-            c = k-273.15;
-            f = 5.0/9.0*(k-273.15)+32;
-            r = 4.0/9.0*(k-273.15);
-
+            SuhuTemps result = KonversiKelvin(k);
+            c = result.c;
+            f = result.f;
+            r = result.r;
             cout << "Konversi suhu ke Celcius adalah\t\t: " << c << endl;
             cout << "Konversi suhu ke Fahrenheit adalah\t: " << f << endl;
             cout << "Konversi suhu ke Reamur adalah\t\t: " << r << endl << '\n';
         } else if(pilihan == 4){
             cout << "Masukkan nilai Reamur : "; cin >> r;
             cout << "-------------------------" << endl;
-            c = (5.0/4.0)*r;
-            f = (9.0/4.0)*r+32;
-            k = 5.0/4.0*r+273.15;
-
+            SuhuTemps result = KonversiReamur(r);
+            c = result.c;
+            f = result.f;
+            k = result.k;
             cout << "Konversi suhu ke Celcius adalah\t\t: " << c << endl;
             cout << "Konversi suhu ke Fahrenheit adalah\t: " << f << endl;
             cout << "Konversi suhu ke Kelvin adalah\t\t: " << k << endl << '\n';

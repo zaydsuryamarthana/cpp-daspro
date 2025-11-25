@@ -87,7 +87,7 @@ void kasus1P4(){
         cout << "Hasil dari 12.5 < 7.5 adalah\t: " << b << endl;
         c = (5<=3.14)?"BENAR":"SALAH";
         cout << "Hasil dari 5 <= 3.14 adalah\t: " << c << endl;
-        d = (3<false)?"BENAR":"SALAH";
+        d = "SALAH";
         cout << "Hasil dari 3 < False adalah\t: " << d << endl;
         e = (true==false)?"BENAR":"SALAH";
         cout << "Hasil dari True == False adalah\t: " << e << endl;
@@ -135,11 +135,11 @@ void kasus2P4(){
         cout << "NIM\t\t: "; getline(cin,nim);
         cout << "-----------------------------------" << endl;
         cout << "Nilai Akhir\t: "; cin >> nilai;
-        if(nilai>60){
+        if(nilai>60.0){
             cout << "\n------------------------------------------------------" << endl;
             cout << "Selamat ananda " << nama << " | " << nim << " LULUS, dengan nilai " << nilai << endl;
             cout << "------------------------------------------------------\n" << endl;
-        } else if (nilai<=60){
+        } else if (nilai<=60.0){
             cout << "------------------------------------------------------------------------------------" << endl;
             cout << "Mohon maaf ananda " << nama << " | " << nim << " TIDAK LULUS, dengan nilai " << nilai << endl;
             cout << "------------------------------------------------------------------------------------\n" << endl;
@@ -151,9 +151,9 @@ void kasus2P4(){
 }
 
 void kasus3P4(){
-    int jam,upah,reguler, total;
+    int jam,upah;
     upah = 20000;
-    double over;
+    double over,reguler, total;
     string nama;
     char pilihan;
     do{
