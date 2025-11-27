@@ -542,7 +542,7 @@ void sistemP5()
     cout << "---------------------------------------" << endl;
     do
     {
-        cout << "Program Pertemuan 5 :" << endl;
+        cout << "\nProgram Pertemuan 5 :" << endl;
         cout << "------------------------------" << endl;
         cout << "1. Konversi & Keterangan Nilai" << endl;
         cout << "2. Biaya Parkir" << endl;
