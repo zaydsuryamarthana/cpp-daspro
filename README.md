@@ -2,10 +2,10 @@
 
 Proyek ini berisi kumpulan latihan untuk memahami **dasar-dasar pemrograman C++**. Setiap file (p1, p2, p3, dst.) mewakili pertemuan atau topik tertentu dalam pembelajaran C++ — mulai dari penggunaan variabel, fungsi, hingga struktur dasar logika.
 
-## 🧠 Tujuan
+## Tujuan
 Memberikan pengenalan terhadap **fundamental bahasa pemrograman C++** melalui contoh sederhana yang dapat langsung dijalankan menggunakan **Code::Blocks** atau compiler C++ lainnya.
 
-## ⚙️ Cara Menggunakan
+## Cara Menggunakan
 
 1. **Siapkan Code Editor & Compiler**
    - Unduh **Code::Blocks** (disarankan): [https://www.codeblocks.org/downloads/](https://www.codeblocks.org/downloads/)
@@ -15,7 +15,7 @@ Memberikan pengenalan terhadap **fundamental bahasa pemrograman C++** melalui co
    - Buka file `.cbp` melalui Code::Blocks
    - Tekan **Build and Run (F9)** untuk menjalankan program
 
-## 🗂️ Struktur Folder
+## Struktur File
 Setiap file pertemuan disusun seperti berikut:
 ```
 ├── p1/   → Pertemuan 1: Pengenalan C++
@@ -25,9 +25,7 @@ Setiap file pertemuan disusun seperti berikut:
 ├── p5/   → Pertemuan 5: Analisis Kondisi Lanjutan
 ├── p6/   → Pertemuan 6: Perulangan atau Looping
 ├── p7/   → Pertemuan 7: Nested Looping (Bersarang)
+├── p8/   → Pertemuan 8: Array
 ├── simulasi/   → Latihan UTS : Simulasi UTS Pemrograman C++
 └── main.cpp  → File utama proyek
 ```
-
-## 💡 Catatan
-Proyek ini cocok digunakan untuk **semua kalangan** yang ingin memahami logika dasar dan struktur kode C++ sebelum berlanjut ke konsep OOP atau algoritma lanjutan.
