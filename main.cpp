@@ -7,6 +7,8 @@
 #include "p6.h"
 #include "p7.h"
 #include "p8.h"
+#include "p9.h"
+#include "p10.h"
 #include "simulasi.h"
 #include <limits>
 
@@ -28,9 +30,10 @@ int main()
         cout << "6. Pertemuan 6 : Looping For While Do" << endl;
         cout << "7. Pertemuan 7 : Nested Looping" << endl;
         cout << "8. Pertemuan 8 : Array" << endl;
-        cout << "0. Latihan UTS : Simulasi UTS Daspro C++\n"
-             << endl;
-        cout << "Pilih salah satu pembelajaran C++ : ";
+        cout << "9. Pertemuan 9 : Dimensi Array" << endl;
+        cout << "10. Pertemuan 10 : Tipe Data Struktur" << endl;
+        cout << "0. Latihan UTS : Simulasi UTS Daspro C++" << endl;
+        cout << "\nPilih salah satu pembelajaran C++ : ";
         cin >> pilihan;
         cout << '\n';
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -59,6 +62,12 @@ int main()
             break;
         case 8:
             sistemP8();
+            break;
+        case 9:
+            sistemP9();
+            break;
+        case 10:
+            sistemP10();
             break;
         case 0:
             simulasi();
