@@ -23,7 +23,7 @@ void kasus1P8()
         cout << "Masukkan nilai array ke - " << i + 1 << " : ";
         cin >> arr[i];
     }
-    cout << "--------------------------------------";
+    cout << "--------------------------------------\n";
     for (int i = 0; i < n; i++)
     {
         cout << "Nilai dari index [" << i << "] : " << arr[i] << endl;

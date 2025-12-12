@@ -40,101 +40,125 @@ void kasus1P10()
 
 void kasus2P10()
 {
+    int maxData = 100, indexMhsMax, indexMhsMin;
+    float maxx = 0, minn = 4, sum = 0, avg;
+    mahasiswa identitas[maxData];
 
-    int n, pilihan, akhir = 0;
-    char lanjut;
+    int n, pilihan, allData = 0;
+
     cout << "\n-------------------------" << endl;
-    cout << "Array dalam Data Struktur" << endl;
+    cout << "Array dalam data Struktur" << endl;
     cout << "-------------------------" << endl;
-    cout << "Masukkan banyaknya Mahasiswa : ";
+    cout << "Berapa data Mahasiswa yang ingin diinput : ";
     cin >> n;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    mahasiswa data[n];
+    cout << endl;
+
+    if (n > maxData)
+    {
+        n = maxData;
+    }
 
     for (int i = 0; i < n; i++)
     {
-        cout << "\nData ke - " << i + 1 << endl;
-        cout << "|-----------------------------------------------------------|" << endl;
-        cout << "| Nama\t: ";
-        getline(cin, data[i].nama);
-        cout << "| NIM\t: ";
-        getline(cin, data[i].nim);
-        cout << "| IPK\t: ";
-        cin >> data[i].ipk;
+        cout << "Informasi Mahasiswa - " << i + 1 << endl;
+        cout << "Nama Lengkap\t: ";
+        getline(cin, identitas[i].nama);
+        cout << "NIM\t\t: ";
+        getline(cin, identitas[i].nim);
+        cout << "IPK\t\t: ";
+        cin >> identitas[i].ipk;
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "|-----------------------------------------------------------|" << endl;
-    }
-    cout << "\n-----------------------------------------------------------" << endl;
-    for (int i = 0; i < n; i++)
-    {
-        cout << "Data - " << i + 1 << endl;
-        cout << "Nama\t: " << data[i].nama << endl;
-        cout << "NIM\t: " << data[i].nim << endl;
-        cout << "IPK\t: " << data[i].ipk << endl;
-        akhir = akhir + (i+1);
-        cout << "\n";
-    }
-    cout << "-----------------------------------------------------------" << endl;
-    cout << akhir << endl;
-    cout << "Apakah kamu ingin melanjutkan tahap pengolahan data ? ";
-    cin >> lanjut;
+        cout << "---------------------------------------------------" << endl;
 
-    auto pilihan1 = [&]()
-    {
-        cout << "\nMenampilkan Seluruh Data Mahasiswa" << endl;
-        cout << "-----------------------------------------------------------" << endl;
-        for (int i = 0; i < n; i++)
-        {
-            cout << "Data - " << i + 1 << endl;
-            cout << "Nama\t: " << data[i].nama << endl;
-            cout << "NIM\t: " << data[i].nim << endl;
-            cout << "IPK\t: " << data[i].ipk << endl;
-            cout << "\n";
-        }
-        cout << "-----------------------------------------------------------" << endl;
-    };
+        allData++;
+    }
 
-    auto pilihan2 = [&]()
+    auto data = [&]()
     {
-        cout << "Menambahkan data Mahasiswa" << endl;
-        cout << "--------------------------" << endl;
-        cout << akhir << endl;
-        cout << "Berapa data yang mau ditambahkan : ";
-        cin >> n;
-        for (int i = akhir + 1; n == i + 1; i++)
+        cout << "=== MENAMPILKAN SELURUH DATA ===" << endl;
+        for (int i = 0; i < allData; i++)
         {
-            cout << "|-----------------------------------------------------------|" << endl;
-            cout << "| Nama\t: ";
-            getline(cin, data[i].nama);
-            cout << "| NIM\t: ";
-            getline(cin, data[i].nim);
-            cout << "| IPK\t: ";
-            cin >> data[i].ipk;
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "|-----------------------------------------------------------|" << endl;
+            cout << "Nama Lengkap\t: " << identitas[i].nama << endl;
+            cout << "NIM\t\t: " << identitas[i].nim << endl;
+            cout << "IPK\t\t: " << identitas[i].ipk << endl;
+            cout << "---------------------------------------------------" << endl;
         }
     };
 
+    auto analisis = [&](){
+        cout << "=== ANALISIS DATA MAHASISWA ===" << endl;
+        for(int i=0; i<allData; i++){
+            if(maxx < identitas[i].ipk){
+                maxx = identitas[i].ipk;
+                indexMhsMax = i;
+            }
+            if(minn > identitas[i].ipk){
+                minn = identitas[i].ipk;
+                indexMhsMin = i;
+            }
+            sum = sum + identitas[i].ipk;
+            avg = (sum / n);
+        }
+        cout << "Data yang diperoleh setalah analisis adalah " << endl;
+        cout << "IPK Tertinggi atas nama \nNama\t: " << identitas[indexMhsMax].nama << endl;
+        cout << "IPK\t: " << maxx << endl;
+        cout << "----------------------------------------------------------------\n";
+        cout << "IPK Terendah atas nama \n Nama\t: " << identitas[indexMhsMin].nama << endl;
+        cout << "IPK\t: " << minn << endl;
+        cout << "----------------------------------------------------------------\n";
+        cout << "Rata-rata IPK keseluruhan\t: " << avg << endl;
+
+    };
+
+    auto modifiasiIpk = [&](){
+        int dataMhs;
+        float nilaiMhs;
+        data();
+        cout << "=== MODIFIKASI DATA IPK MAHASISWA ===" << endl;
+        cout << "Pilih salah satu mahasiswa yaa : "; cin >> dataMhs;
+        dataMhs = dataMhs - 1;
+        cout << "Masukkan nilai terbaru | " << identitas[dataMhs].nama << " : "; cin >> nilaiMhs;
+        identitas[dataMhs].ipk = nilaiMhs;
+
+        cout << "\n---------------------------------------------------------------\n";
+        cout << "Nama\t: " << identitas[dataMhs].nama << endl;
+        cout << "IPK\t: " << identitas[dataMhs].ipk << endl;
+    };
+
+    if (allData == n)
+    {
+        cout << allData << " Data Berhasil disimpan";
+        cout << "\n---------------------------------------------------\n"
+             << endl;
+    }
+    else
+    {
+        cout << "Data gagal disimpan";
+    }
     do
     {
-        cout << "\nApa yang ingin diolah data ini? " << endl;
-        cout << "1. Tampilkan seluruh data Mahasiswa" << endl;
-        cout << "2. Tambahkan data Mahasiswa" << endl;
-        cout << "3. Analisa data Mahasiswa" << endl;
-        cout << "4. Modifikasi IPK Mahasiswa" << endl;
-        cout << "\nPilih salah satu pengolahan data : ";
+        cout << "\nSilahkan pilih salah satu tindakan dibawah" << endl;
+        cout << "1. Menampilkan seluruh data Mahasiswa" << endl;
+        cout << "2. Analisa seluruh data Mahasiswa" << endl;
+        cout << "3. Memodifiasi data IPK Mahasiswa" << endl;
+        cout << "\nPilih salah satu :";
         cin >> pilihan;
         switch (pilihan)
         {
         case 1:
-            pilihan1();
+            data();
             break;
         case 2:
-            pilihan2();
+            analisis();
+            break;
+        case 3:
+            modifiasiIpk();
+            break;
         default:
             break;
         }
-    } while ((lanjut == 'y') || (lanjut == 'Y'));
+    } while (pilihan != 0);
 }
 
 void sistemP10()
