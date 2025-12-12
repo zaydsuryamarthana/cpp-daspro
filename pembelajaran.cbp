@@ -49,8 +49,14 @@
 		<Unit filename="p6.h" />
 		<Unit filename="p7.cpp" />
 		<Unit filename="p7.h" />
-		<Unit filename="uts.cpp" />
-		<Unit filename="uts.h" />
+		<Unit filename="p8.cpp" />
+		<Unit filename="p8.h" />
+		<Unit filename="p9.cpp" />
+		<Unit filename="p9.h" />
+		<Unit filename="p10.cpp" />
+		<Unit filename="p10.h" />
+		<Unit filename="p11.cpp" />
+		<Unit filename="p11.h" />
 		<Unit filename="simulasi.cpp" />
 		<Unit filename="simulasi.h" />
 		<Extensions />
