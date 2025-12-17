@@ -34,8 +34,8 @@ int main()
         cout << "8. Pertemuan 8 : Array" << endl;
         cout << "9. Pertemuan 9 : Dimensi Array" << endl;
         cout << "10. Pertemuan 10 : Tipe Data Struktur" << endl;
-        cout << "11. Pertemuan 11 : Function atau Fungsi" << endl;
-        cout << "12. Pertemuan 12 : Prosedur" << endl;
+        cout << "11. Pertemuan 11 : Penggunaan Function" << endl;
+        cout << "12. Pertemuan 12 : Function Prosedur" << endl;
         cout << "0. Latihan UTS : Simulasi UTS Daspro C++" << endl;
         cout << "\nPilih salah satu pembelajaran C++ : ";
         cin >> pilihan;
