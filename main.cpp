@@ -10,6 +10,7 @@
 #include "p9.h"
 #include "p10.h"
 #include "p11.h"
+#include "p12.h"
 #include "simulasi.h"
 #include <limits>
 
@@ -34,6 +35,7 @@ int main()
         cout << "9. Pertemuan 9 : Dimensi Array" << endl;
         cout << "10. Pertemuan 10 : Tipe Data Struktur" << endl;
         cout << "11. Pertemuan 11 : Function atau Fungsi" << endl;
+        cout << "12. Pertemuan 12 : Prosedur" << endl;
         cout << "0. Latihan UTS : Simulasi UTS Daspro C++" << endl;
         cout << "\nPilih salah satu pembelajaran C++ : ";
         cin >> pilihan;
@@ -73,6 +75,9 @@ int main()
             break;
         case 11:
             sistemP11();
+            break;
+        case 12:
+            sistemP12();
             break;
         case 0:
             simulasi();
