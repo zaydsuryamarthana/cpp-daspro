@@ -1,5 +1,6 @@
 #include <iostream>
 #include "p11.h"
+#include "header.h"
 #include <limits>
 #include <math.h>
 
@@ -139,6 +140,23 @@ float c2r(float celcius)
     return celcius;
 }
 
+bool isPrima(int n)
+{
+    if (n <= 1)
+    {
+        return false;
+    }
+
+    for (int i = 2; i <= sqrt(n); i++)
+    {
+        if (n % 2 == 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
 void kasus1P11()
 {
     int pilihan, a, b, c, d, n, pangkat;
@@ -226,6 +244,21 @@ void kasus1P11()
         } while ((restart == 'y') || (restart == 'Y'));
     };
 
+    auto soal5 = [&]()
+    {
+        do
+        {
+            cout << "\nMencari Nilai Bilangan Prima" << endl;
+            cout << "----------------------------" << endl;
+            cout << "Masukkan bilangan yang ingin dicari : ";
+            cin >> n;
+            cout << "Nilai yang diinput adalah : " << isPrima(n) << endl;
+            cout << "\nApakah kamu ingin mengulanginya lagi : ";
+            cin >> restart;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } while ((restart == 'y') || (restart == 'Y'));
+    };
+
     do
     {
         cout << "\nStudi Kasus Fungsi Matematika" << endl;
@@ -233,7 +266,8 @@ void kasus1P11()
         cout << "1. Nilai Maksimal dari suatu bilangan" << endl;
         cout << "2. Nilai Ganjil, Genap & Pangkat" << endl;
         cout << "3. Nilai 3 of Sum, Product, Avg" << endl;
-        cout << "4. Nilai Konversi suhu" << endl;
+        cout << "4. Nilai Konversi Suhu" << endl;
+        cout << "5. Mencari Nilai Bilangan Prima" << endl;
         cout << "\nPilih salah satu studi kasus : ";
         cin >> pilihan;
         switch (pilihan)
@@ -249,6 +283,10 @@ void kasus1P11()
             break;
         case 4:
             soal4();
+            break;
+        case 5:
+            soal5();
+            break;
         default:
             break;
         }
@@ -257,7 +295,126 @@ void kasus1P11()
 
 void kasus2P11()
 {
-    cout << "" << endl;
+    int pilihan, n;
+    float avg;
+
+    auto soal1 = [&]()
+    {
+        cout << "\nMencari nilai Luas Persegi" << endl;
+        cout << "Masukkan nilai yang diinginkan : ";
+        cin >> n;
+        cout << "Luas Persegi ( s = " << n << " ) adalah : " << luasPersegi(n) << endl;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    };
+
+    auto soal2 = [&]()
+    {
+        cout << "\nMencari nilai Terbesar" << endl;
+        cout << "Masukkan nilai yang diinginkan : ";
+        cin >> n;
+        isBesar(n);
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    };
+
+    auto soal3 = [&]()
+    {
+        cout << "\nMencari nilai Terkecil" << endl;
+        cout << "Masukkan nilai yang diinginkan : ";
+        cin >> n;
+        isKecil(n);
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    };
+
+    auto soal4 = [&](){
+        cout << "\nApakah Bilangan Ganjil" << endl;
+        cout << "Masukkan bilangan yang diinginkan : "; cin >> n;
+        cout << "Nilai : " << apakahGanjil(n) << endl;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    };
+
+    auto soal5 = [&](){
+        cout << "\nApakah Bilangan Genap" << endl;
+        cout << "Masukkan bilangan yang diinginkan : "; cin >> n;
+        cout << "Nilai : " << apakahGenap(n) << endl;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');        
+    };
+
+    auto soal6 = [&](){
+        cout << "\nMengubah Bilangan ke Positif" << endl;
+        cout << "Masukkan bilangan yang diinginkan : "; cin >> n;
+        cout << "Nilai : " << toPositif(n) << endl;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');        
+    };
+
+    auto soal7 = [&](){
+        cout << "\nMengubah Bilangan ke Negatif" << endl;
+        cout << "Masukkan bilangan yang diinginkan : "; cin >> n;
+        cout << "Nilai : " << toNegatif(n) << endl;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');        
+    };    
+
+    auto soal8 = [&](){
+        cout << "\nHasil Penjumlahan Bilangan Deret" << endl;
+        cout << "Masukkan bilangan yang diinginkan : "; cin >> n;
+        cout << sumN(n) << endl;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+    };
+
+    auto soal9 = [&](){
+        cout << "\nRata-rata dari Penjumlahan Bilangan Deret" << endl;
+        cout << "Masukkan bilangan yang diinginkan : "; cin >> avg;
+        cout << avgN(avg) << endl;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');         
+    };
+
+    do
+    {
+        cout << "\nStudi kasus Pengolahan Data" << endl;
+        cout << "---------------------------" << endl;
+        cout << "1. Mencari Luas Persegi panjang" << endl;
+        cout << "2. Mencari Nilai Terbesar" << endl;
+        cout << "3. Mencari Nilai Terkecil" << endl;
+        cout << "4. Apakah Bilangan Ganjil" << endl;
+        cout << "5. Apakah Bilangan Genap" << endl;
+        cout << "6. Mengubah Bilangan ke Positif" << endl;
+        cout << "7. Mengubah Bilangan ke Negatif" << endl;
+        cout << "8. Hasil Penjumlahan Bilangan Deret" << endl;
+        cout << "9. Rata-rata dari Penjumlahan Bilangan Deret" << endl;
+        cout << "\nPilih salah satu function : ";
+        cin >> pilihan;
+        switch (pilihan)
+        {
+        case 1:
+            soal1();
+            break;
+        case 2:
+            soal2();
+            break;
+        case 3:
+            soal3();
+            break;
+        case 4:
+            soal4();
+            break;
+        case 5:
+            soal5();
+            break;
+        case 6:
+            soal6();
+            break;
+        case 7:
+            soal7();
+            break;
+        case 8:
+            soal8();
+            break;
+        case 9:
+            soal9();
+            break;
+        default:
+            break;
+        }
+    } while (pilihan != 0);
 }
 
 void sistemP11()
