@@ -42,7 +42,8 @@ void getAllMahasiswa(mahasiswa identitas[], int n)
 
 void analisaMahasiswa(mahasiswa identitas[], int n)
 {
-    int indexMhsMin, indexMhsMax, maxx = 0, minn = 4, sum = 0;
+    int indexMhsMin, indexMhsMax; 
+    float maxx = 0, minn = 4, sum = 0;
     float avg = 0;
     for (int i = 0; i < n; i++)
     {
