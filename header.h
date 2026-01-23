@@ -1,6 +1,7 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+void sistemP11();
 int luasPersegi(int n);
 void isBesar(int n);
 void isKecil(int n);
